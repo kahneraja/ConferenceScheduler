@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConferenceScheduler.Common;
 using System.Collections.Generic;
+using ConferenceScheduler.Common.Store;
 
 namespace ConferenceScheduler.Tests
 {
@@ -14,6 +15,8 @@ namespace ConferenceScheduler.Tests
             var conferenceSchedule = new ConferenceSchedule();
             Assert.IsNotNull(conferenceSchedule.Tracks);
         }
+
+
 
     }
 }

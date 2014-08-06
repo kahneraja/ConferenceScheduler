@@ -13,26 +13,49 @@ namespace ConferenceScheduler.Tests
         [TestMethod]
         public void ShouldHaveCorrectStartTime()
         {
-            var session = new Afternoon();
+            var afternoon = new Afternoon();
             var time = new TimeSpan(13, 0, 0);
-            Assert.AreEqual(session.StartTime, time);
+            Assert.AreEqual(afternoon.StartTime, time);
         }
 
         [TestMethod]
         public void ShouldHaveCorrectEndTime()
         {
-            var session = new Afternoon();
+            var afternoon = new Afternoon();
             var time = new TimeSpan(17, 0, 0);
-            Assert.AreEqual(session.EndTime, time);
+            Assert.AreEqual(afternoon.EndTime, time);
         }
 
 
         [TestMethod]
         public void ShouldHaveTalks()
         {
-            var session = new Morning();
+            var session = new Afternoon();
             Assert.IsNotNull(session.Talks);
         }
 
+        [TestMethod]
+        public void ShouldHaveCorrectTotalMinutes()
+        {
+            var afternoon = new Afternoon();
+            var minutes = afternoon.TotalMinutes;
+            Assert.AreEqual(minutes, 60 * 4);
+        }
+
+        [TestMethod]
+        public void ShouldHaveAvailableMinutes()
+        {
+            var afternoon = new Afternoon();
+            var minutes = afternoon.AvailableMinutes;
+            Assert.AreEqual(minutes, 60 * 4);
+        }
+
+        [TestMethod]
+        public void ShouldNotBeFull()
+        {
+            var afternoon = new Afternoon();
+            var isFull = afternoon.IsFull;
+            Assert.AreEqual(false, isFull);
+        }
     }
 }

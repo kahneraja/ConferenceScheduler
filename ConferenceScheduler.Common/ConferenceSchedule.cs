@@ -15,17 +15,32 @@ namespace ConferenceScheduler.Common
             Tracks = new List<Track>();
         }
 
-
         public void AllocateTalks(List<Talk> talks)
         {
-            var track = new Track();
-
             foreach (var talk in talks)
             {
-                track.Morning.Talks.Add(talk);
+                var track = FindSuitableTrack(talk.Minutes);
+                track.Allocate(talk);
+            }
+        }
+
+        private Track FindSuitableTrack(int minutes)
+        {
+            foreach (var track in Tracks)
+            {
+                if (track.HasAvailability(minutes))
+                    return track;
             }
 
+            var t = CreateNewTrack();
+            return t;
+        }
+
+        private Track CreateNewTrack()
+        {
+            var track = new Track();
             Tracks.Add(track);
+            return track;
         }
     }
 }

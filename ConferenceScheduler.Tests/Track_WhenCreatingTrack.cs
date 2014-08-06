@@ -20,6 +20,5 @@ namespace ConferenceScheduler.Tests
             var track = new Track();
             Assert.IsNotNull(track.Afternoon);
         }
-
     }
 }

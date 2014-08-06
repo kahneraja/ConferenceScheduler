@@ -3,12 +3,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConferenceScheduler.Common;
 using System.Collections.Generic;
 using System.Linq;
-using ConferenceScheduler.Common.FileManager;
+using ConferenceScheduler.Common.Store;
 
 namespace ConferenceScheduler.Tests
 {
     [TestClass]
-    public class File_Manager_WhenLoadingTalksFromFile
+    public class Store_WhenLoadingTalks
     {
         [TestMethod]
         public void ShouldHaveSortedTalks()

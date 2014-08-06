@@ -50,10 +50,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Store_WhenExportingSchedule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="SampleData\EndToEndSchedule.txt" />
+    <Content Include="SampleData\Schedule.txt" />
     <Content Include="SampleData\Talks.txt" />
-    <Compile Include="File_Manager_WhenLoadingTalksFromFile.cs" />
-    <Compile Include="Session_WhenAllocatingMorningTalks.cs" />
+    <Compile Include="Store_WhenLoadingTalks.cs" />
+    <Compile Include="Session_WhenAllocatingTalks.cs" />
     <Compile Include="Session_WhenCreatingAfternoonSession.cs" />
     <Compile Include="Session_WhenCreatingMorningSession.cs" />
     <Compile Include="ConferenceSchedule_WhenAllocatingTalks.cs" />

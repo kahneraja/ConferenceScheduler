@@ -38,8 +38,14 @@ namespace ConferenceScheduler.Common
             }
         }
 
-        public void AllocateTalk(Talk talk)
+        public void Allocate(Talk talk)
         {
+            var availableTimeSpan = TimeSpan.FromMinutes(AvailableMinutes);
+
+            var startTime = EndTime - availableTimeSpan;
+
+            talk.StartTime = startTime;
+
             Talks.Add(talk);
         }
 

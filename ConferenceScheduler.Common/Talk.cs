@@ -11,5 +11,8 @@ namespace ConferenceScheduler.Common
         public int Minutes { get; set; }
 
         public string Title { get; set; }
+        public string Description { get; set; }
+
+        public TimeSpan StartTime { get; set; }
     }
 }

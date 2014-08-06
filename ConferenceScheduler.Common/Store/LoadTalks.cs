@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConferenceScheduler.Common.FileManager
+namespace ConferenceScheduler.Common.Store
 {
     public class LoadTalks
     {
@@ -38,6 +38,7 @@ namespace ConferenceScheduler.Common.FileManager
             var talk = new Talk();
             talk.Title = GetTitle(line);
             talk.Minutes = GetMinutes(line);
+            talk.Description = line;
             return talk;
         }
 

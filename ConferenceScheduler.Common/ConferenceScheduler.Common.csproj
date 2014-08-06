@@ -40,7 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConferenceSchedule.cs" />
-    <Compile Include="FileManager\LoadTalks.cs" />
+    <Compile Include="Store\LoadTalks.cs" />
+    <Compile Include="Store\SaveSchedule.cs" />
     <Compile Include="Sessions\Afternoon.cs" />
     <Compile Include="Sessions\Morning.cs" />
     <Compile Include="Sessions\Session.cs" />

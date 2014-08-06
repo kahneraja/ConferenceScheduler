@@ -30,5 +30,20 @@ namespace ConferenceScheduler.Common
             }
         }
 
+        public void Allocate(Talk talk)
+        {
+            if (!Morning.IsFull)
+                Morning.Allocate(talk);
+            else if (!Afternoon.IsFull)
+                Afternoon.Allocate(talk);
+        }
+
+        internal bool HasAvailability(int minutes)
+        {
+            if (Morning.AvailableMinutes >= minutes || Afternoon.AvailableMinutes >= minutes)
+                return true;
+
+            return false;
+        }
     }
 }
