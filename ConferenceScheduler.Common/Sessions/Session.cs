@@ -10,6 +10,15 @@ namespace ConferenceScheduler.Common
         public List<Talk> Talks { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
+        public TimeSpan ClosingTime
+        {
+            get
+            {
+                var availableTimeSpan = TimeSpan.FromMinutes(AvailableMinutes);
+                return EndTime - availableTimeSpan;
+            }
+        }
+
         public int TotalMinutes
         {
             get
@@ -18,6 +27,7 @@ namespace ConferenceScheduler.Common
                 return (int)timespan.TotalMinutes;
             }
         }
+
         public int AvailableMinutes
         {
             get
@@ -27,6 +37,7 @@ namespace ConferenceScheduler.Common
                 return availableTime;
             }
         }
+
         public bool IsFull
         {
             get

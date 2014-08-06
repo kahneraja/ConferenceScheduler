@@ -13,12 +13,6 @@ namespace ConferenceScheduler.Common
 
         public Afternoon Afternoon { get; set; }
 
-        public Track()
-        {
-            Morning = new Morning();
-            Afternoon = new Afternoon();
-        }
-
         public bool IsFull
         {
             get
@@ -29,6 +23,28 @@ namespace ConferenceScheduler.Common
                 return false;
             }
         }
+
+        public TimeSpan EarliestNetworkingTime { get { return new TimeSpan(16, 0, 0); } }
+
+        public TimeSpan NetworkingTime
+        {
+            get
+            {
+
+                if (Afternoon.ClosingTime < EarliestNetworkingTime)
+                    return EarliestNetworkingTime;
+
+                return Afternoon.ClosingTime;
+            }
+        }
+
+        public Track()
+        {
+            Morning = new Morning();
+            Afternoon = new Afternoon();
+        }
+
+
 
         public void Allocate(Talk talk)
         {
@@ -45,5 +61,7 @@ namespace ConferenceScheduler.Common
 
             return false;
         }
+
+
     }
 }
