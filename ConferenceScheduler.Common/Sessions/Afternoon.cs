@@ -13,6 +13,5 @@ namespace ConferenceScheduler.Common
             EndTime = new TimeSpan(17, 0, 0);
             Talks = new List<Talk>();
         }
-
     }
 }

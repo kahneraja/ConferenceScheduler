@@ -48,9 +48,9 @@ namespace ConferenceScheduler.Common
 
         public void Allocate(Talk talk)
         {
-            if (!Morning.IsFull)
+            if (Morning.CanFit(talk.Minutes))
                 Morning.Allocate(talk);
-            else if (!Afternoon.IsFull)
+            else if (Afternoon.CanFit(talk.Minutes))
                 Afternoon.Allocate(talk);
         }
 

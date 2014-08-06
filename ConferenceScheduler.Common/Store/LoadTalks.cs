@@ -16,9 +16,14 @@ namespace ConferenceScheduler.Common.Store
 
             var talks = ConvertText(lines);
 
-            talks.OrderByDescending(x => x.Minutes);
+            var sortedTalks = Sort(talks);
 
-            return talks;
+            return sortedTalks;
+        }
+
+        public static List<Talk> Sort(List<Talk> talks)
+        {
+            return talks.OrderByDescending(x => x.Minutes).ToList();
         }
 
         public static List<Talk> ConvertText(List<string> lines)

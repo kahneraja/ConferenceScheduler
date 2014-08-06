@@ -11,12 +11,22 @@ namespace ConferenceScheduler.Tests
     public class Store_WhenLoadingTalks
     {
         [TestMethod]
-        public void ShouldHaveSortedTalks()
+        public void ShouldHaveLoadedTalks()
         {
             var talks = LoadTalks.LoadFile("../../SampleData/Talks.txt");
-            Assert.IsTrue(talks.First().Minutes > talks.Last().Minutes);
+            Assert.IsNotNull(talks);
         }
 
+        [TestMethod]
+        public void ShouldSortTalksByDurationDesc()
+        {
+            var talks = CreateFullDaySampleTalks();
+            var sortedTalks = LoadTalks.Sort(talks);
+            var first = sortedTalks.First();
+            var last = sortedTalks.Last();
+            Assert.IsTrue(first.Minutes > last.Minutes);
+        }
+        
         [TestMethod]
         public void ShouldConvertSingleLineToTitle()
         { 
@@ -48,6 +58,17 @@ namespace ConferenceScheduler.Tests
             var talks = LoadTalks.ConvertText(lines);
             var talk = talks.First();
             Assert.AreEqual(talk.Title, "Writing Fast Tests Against Enterprise Rails");
+        }
+
+        private List<Talk> CreateFullDaySampleTalks()
+        {
+            var talks = new List<Talk>();
+            for (var i = 0; i < 3; i++)
+            {
+                var talk = new Talk { Minutes = i * 10 };
+                talks.Add(talk);
+            }
+            return talks;
         }
 
     }

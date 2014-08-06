@@ -49,6 +49,14 @@ namespace ConferenceScheduler.Common
             }
         }
 
+        public bool CanFit(int minutes)
+        {
+            if (minutes <= AvailableMinutes)
+                return true;
+
+            return false;
+        }
+
         public void Allocate(Talk talk)
         {
             var availableTimeSpan = TimeSpan.FromMinutes(AvailableMinutes);
