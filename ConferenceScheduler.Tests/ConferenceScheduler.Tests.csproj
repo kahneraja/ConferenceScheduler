@@ -52,12 +52,14 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="SampleData\Talks.txt" />
-    <Compile Include="WhenLoadingTalksFromFile.cs" />
-    <Compile Include="WhenCreatingAfternoonSession.cs" />
-    <Compile Include="WhenCreatingMorningSession.cs" />
-    <Compile Include="WhenAllocatingTalks.cs" />
-    <Compile Include="WhenCreatingTrack.cs" />
-    <Compile Include="WhenCreatingConferenceSchedule.cs" />
+    <Compile Include="File_Manager_WhenLoadingTalksFromFile.cs" />
+    <Compile Include="Session_WhenAllocatingMorningTalks.cs" />
+    <Compile Include="Session_WhenCreatingAfternoonSession.cs" />
+    <Compile Include="Session_WhenCreatingMorningSession.cs" />
+    <Compile Include="ConferenceSchedule_WhenAllocatingTalks.cs" />
+    <Compile Include="Track_WhenCreatingTrack.cs" />
+    <Compile Include="Track_WhenAllocatingTalks.cs" />
+    <Compile Include="ConferenceSchedule_WhenCreatingConferenceSchedule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConferenceScheduler.Common\ConferenceScheduler.Common.csproj">

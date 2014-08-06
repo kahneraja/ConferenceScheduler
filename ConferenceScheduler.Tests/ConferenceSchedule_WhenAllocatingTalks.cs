@@ -7,15 +7,14 @@ using System.Linq;
 namespace ConferenceScheduler.Tests
 {
     [TestClass]
-    public class WhenAllocatingTalks
+    public class ConferenceSchedule_WhenAllocatingTalks
     {
         [TestMethod]
-        public void ShouldHaveTalks()
+        public void ShouldHaveTracks()
         {
             var conferenceSchedule = new ConferenceSchedule();
             var talks = new List<Talk>();
             conferenceSchedule.AllocateTalks(talks);
-          
             Assert.IsTrue(conferenceSchedule.Tracks.Count > 0);
         }
 

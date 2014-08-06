@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConferenceScheduler.Common.Sessions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,26 @@ namespace ConferenceScheduler.Common
 {
     public class Track
     {
-        public Session MorningSession { get; set; }
+        public Morning Morning { get; set; }
 
-        public Session AfternoonSession { get; set; }
+        public Afternoon Afternoon { get; set; }
+
+        public Track()
+        {
+            Morning = new Morning();
+            Afternoon = new Afternoon();
+        }
+
+        public bool IsFull
+        {
+            get
+            {
+                if (Morning.IsFull && Afternoon.IsFull)
+                    return true;
+
+                return false;
+            }
+        }
+
     }
 }

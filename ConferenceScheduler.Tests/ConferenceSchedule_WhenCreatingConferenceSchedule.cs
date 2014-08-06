@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace ConferenceScheduler.Tests
 {
     [TestClass]
-    public class WhenCreatingConferenceSchedule
+    public class ConferenceSchedule_WhenCreatingConferenceSchedule
     {
         [TestMethod]
         public void ShouldHaveTracks()

@@ -16,6 +16,8 @@ namespace ConferenceScheduler.Common.FileManager
 
             var talks = ConvertText(lines);
 
+            talks.OrderByDescending(x => x.Minutes);
+
             return talks;
         }
 

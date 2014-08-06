@@ -6,19 +6,19 @@ using System.Collections.Generic;
 namespace ConferenceScheduler.Tests
 {
     [TestClass]
-    public class WhenCreatingTrack
+    public class Track_WhenCreatingTrack
     {
         [TestMethod]
         public void ShouldHaveMorningSessions()
         {
             var track = new Track();
-            Assert.IsNull(track.MorningSession);
+            Assert.IsNotNull(track.Morning);
         }
         [TestMethod]
         public void ShouldHaveAfternoonSessions()
         {
             var track = new Track();
-            Assert.IsNull(track.AfternoonSession);
+            Assert.IsNotNull(track.Afternoon);
         }
 
     }

@@ -13,6 +13,8 @@ namespace ConferenceScheduler.Common.Sessions
             EndTime = new TimeSpan(12, 0, 0);
             Talks = new List<Talk>();
         }
+
+
     }
 
 }

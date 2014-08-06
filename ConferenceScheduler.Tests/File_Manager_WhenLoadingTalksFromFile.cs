@@ -8,13 +8,13 @@ using ConferenceScheduler.Common.FileManager;
 namespace ConferenceScheduler.Tests
 {
     [TestClass]
-    public class WhenLoadingTalksFromFile
+    public class File_Manager_WhenLoadingTalksFromFile
     {
         [TestMethod]
-        public void ShouldHaveTalks()
+        public void ShouldHaveSortedTalks()
         {
             var talks = LoadTalks.LoadFile("../../SampleData/Talks.txt");
-            Assert.IsNotNull(talks);
+            Assert.IsTrue(talks.First().Minutes > talks.Last().Minutes);
         }
 
         [TestMethod]

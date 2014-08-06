@@ -22,7 +22,7 @@ namespace ConferenceScheduler.Common
 
             foreach (var talk in talks)
             {
-                track.MorningSession.Talks.Add(talk);
+                track.Morning.Talks.Add(talk);
             }
 
             Tracks.Add(track);
